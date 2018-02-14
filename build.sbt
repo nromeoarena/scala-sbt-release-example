@@ -20,8 +20,6 @@ libraryDependencies ++= {
   )
 }
 
-enablePlugins(GitVersioning)
-
 // strip the qualifier off the input version, eg. 1.2.1-SNAPSHOT -> 1.2.1
 releaseVersion     := { ver => Version(ver).map(_.withoutQualifier.string).getOrElse(versionFormatError) }
 
