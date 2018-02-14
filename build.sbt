@@ -26,5 +26,5 @@ publishTo := Some("temp" at "file:///tmp/repository")
 // strip the qualifier off the input version, eg. 1.2.1-SNAPSHOT -> 1.2.1
 releaseVersion     := { ver => Version(ver).map(_.withoutQualifier.string).getOrElse(versionFormatError) }
 
-// bump the minor version and append '-SNAPSHOT', eg. 1.2.1 -> 1.3.0-SNAPSHOT
-releaseNextVersion := { ver => Version(ver).map(_.bumpMinor.asSnapshot.string).getOrElse(versionFormatError) }
+// bump the minor version and append '-SNAPSHOT', eg. 1.2.1 -> 1.2.2-SNAPSHOT
+releaseNextVersion := { ver => Version(ver).map(_.bumpNano.asSnapshot.string).getOrElse(versionFormatError) }
